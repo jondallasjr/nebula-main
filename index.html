@@ -1,0 +1,1080 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Nebula Labs - AI/ML for Mid-Market Companies</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.logo svg {
+  color: #3b82f6;
+  width: 28px;
+  height: 28px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav a {
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: #3b82f6;
+}
+
+.header-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-weight: 600;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* MOBILE NAV */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 99;
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+.mobile-nav a {
+  padding: 1rem;
+  color: #475569;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.mobile-nav hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #3b82f6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .header-nav {
+    display: none;
+  }
+  
+  .header-cta {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .logo span {
+    display: none;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Nebula Labs - AI/ML for Mid-Market Companies - Page CSS */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.hero-visual {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-orb {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 40%, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+.value-props {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-props h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.prop-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.prop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.prop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prop-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.prop-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.capabilities {
+  padding: 4rem 2rem;
+}
+
+.capabilities h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.capability {
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.capability:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.capability h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.capability p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.mission {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.mission h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mission > .container > p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.mission-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.value-item p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.cta-section {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.cta-section > .container > p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-visual {
+    height: 250px;
+  }
+  
+  .gradient-orb {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .props-grid,
+  .capabilities-grid,
+  .mission-values {
+    grid-template-columns: 1fr;
+  }
+}.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 58, 138, 0.3) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.hero-visual {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-orb {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 40%, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+.value-props {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-props h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.prop-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.prop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.prop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prop-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.prop-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.capabilities {
+  padding: 4rem 2rem;
+}
+
+.capabilities h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.capability {
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.capability:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.capability h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.capability p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.mission {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.mission h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mission > .container > p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.mission-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.value-item p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.cta-section {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.cta-section > .container > p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-visual {
+    height: 250px;
+  }
+  
+  .gradient-orb {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .props-grid,
+  .capabilities-grid,
+  .mission-values {
+    grid-template-columns: 1fr;
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/nebula-main/" class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.3"/>
+      </svg>
+      <span>Nebula Labs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/nebula-main/platform">Platform</a>
+      <a href="/nebula-main/solutions">Solutions</a>
+      <a href="/nebula-main/pricing">Pricing</a>
+      <a href="/nebula-main/resources">Resources</a>
+      <a href="/nebula-main/about">About</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/nebula-main/demo" class="btn btn-sm btn-secondary">Book Demo</a>
+      <a href="#" class="btn btn-sm btn-primary">Start Free Trial</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav id="mobileNav" class="mobile-nav">
+  <a href="/nebula-main/platform">Platform</a>
+  <a href="/nebula-main/solutions">Solutions</a>
+  <a href="/nebula-main/pricing">Pricing</a>
+  <a href="/nebula-main/resources">Resources</a>
+  <a href="/nebula-main/about">About</a>
+  <a href="/nebula-main/blog">Blog</a>
+  <a href="/nebula-main/contact">Contact</a>
+  <a href="/nebula-main/security">Security</a>
+  <hr>
+  <a href="#">Start Free Trial</a>
+  <a href="/nebula-main/demo">Book Demo</a>
+</nav><section class="hero">
+  <div class="hero-content">
+    <h1>Advanced ML for Every Business</h1>
+    <p class="hero-subtitle">Enterprise-grade machine learning infrastructure at mid-market prices. Deploy sophisticated AI in days, not months.</p>
+    <div class="hero-cta">
+      <a href="/nebula-main/demo" class="btn btn-primary">Book a Demo</a>
+      <a href="#" class="btn btn-secondary">Start Free Trial</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="gradient-orb"></div>
+  </div>
+</section>
+
+<section class="value-props">
+  <div class="container">
+    <h2>Why Nebula Labs</h2>
+    <div class="props-grid">
+      <div class="prop-card">
+        <div class="prop-icon">⚡</div>
+        <h3>Deploy in Days</h3>
+        <p>Pre-built models and intuitive APIs mean you're running production ML in days, not quarters.</p>
+      </div>
+      <div class="prop-card">
+        <div class="prop-icon">🎯</div>
+        <h3>Built for Mid-Market</h3>
+        <p>Not enterprise bloat, not startup fragility. Designed specifically for companies with 50-5000 employees.</p>
+      </div>
+      <div class="prop-card">
+        <div class="prop-icon">🔍</div>
+        <h3>Explainable AI</h3>
+        <p>Understand why your models make decisions. Transparency isn't optional—it's fundamental.</p>
+      </div>
+      <div class="prop-card">
+        <div class="prop-icon">🛡️</div>
+        <h3>Enterprise Security</h3>
+        <p>SOC 2 Type II certified, HIPAA-ready infrastructure with zero data sharing or training on your inputs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities">
+  <div class="container">
+    <h2>What You Can Build</h2>
+    <div class="capabilities-grid">
+      <div class="capability">
+        <h4>Predictive Analytics</h4>
+        <p>Forecast demand, churn, and revenue with models tuned to your business.</p>
+      </div>
+      <div class="capability">
+        <h4>NLP & Sentiment</h4>
+        <p>Understand customer feedback, emails, and support tickets automatically.</p>
+      </div>
+      <div class="capability">
+        <h4>Recommendation Engines</h4>
+        <p>Personalize user experiences and increase engagement with collaborative filtering.</p>
+      </div>
+      <div class="capability">
+        <h4>Computer Vision</h4>
+        <p>Automate visual inspection, quality control, and document processing.</p>
+      </div>
+      <div class="capability">
+        <h4>Anomaly Detection</h4>
+        <p>Catch fraud, infrastructure issues, and operational anomalies in real-time.</p>
+      </div>
+      <div class="capability">
+        <h4>Custom Models</h4>
+        <p>Train and deploy your own models with our AutoML platform and expert guidance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>Nebula Labs democratizes advanced machine learning. We believe sophisticated ML shouldn't be the exclusive province of tech giants with unlimited budgets. Every business that can benefit from AI should have access to it—at a price that makes sense and with tools that don't require a PhD to operate.</p>
+    <div class="mission-values">
+      <div class="value-item">
+        <h4>Accessibility First</h4>
+        <p>Complex technology should be simple to use.</p>
+      </div>
+      <div class="value-item">
+        <h4>Transparency</h4>
+        <p>Explainable AI and honest communication about capabilities.</p>
+      </div>
+      <div class="value-item">
+        <h4>Continuous Learning</h4>
+        <p>We invest heavily in R&D and keep pace with the field.</p>
+      </div>
+      <div class="value-item">
+        <h4>Ethical AI</h4>
+        <p>Systems that respect privacy, reduce bias, and augment human judgment.</p>
+      </div>
+      <div class="value-item">
+        <h4>Community-Driven</h4>
+        <p>We build what users need, not what sounds impressive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Transform Your Business?</h2>
+    <p>Join mid-market leaders already using Nebula Labs to drive better decisions with AI.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary btn-large">Start Free Trial (14 days)</a>
+      <a href="/nebula-main/contact" class="btn btn-secondary btn-large">Contact Sales</a>
+    </div>
+  </div>
+</section><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>Nebula Labs</h4>
+      <p>Democratizing advanced machine learning for mid-market companies.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/nebulalabs" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a href="https://linkedin.com/company/nebulalabs" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://github.com/nebulalabs" target="_blank" rel="noopener" title="GitHub">⚙</a>
+        <a href="https://youtube.com/@nebulalabs" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a href="https://discord.gg/nebulalabs" target="_blank" rel="noopener" title="Discord">💬</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/nebula-main/platform">Platform</a></li>
+        <li><a href="/nebula-main/solutions">Solutions</a></li>
+        <li><a href="/nebula-main/pricing">Pricing</a></li>
+        <li><a href="/nebula-main/demo">Request Demo</a></li>
+        <li><a href="https://docs.nebulalabs.ai" target="_blank">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/nebula-main/about">About Us</a></li>
+        <li><a href="/nebula-main/careers">Careers</a></li>
+        <li><a href="/nebula-main/blog">Blog</a></li>
+        <li><a href="/nebula-main/resources">Resources</a></li>
+        <li><a href="/nebula-main/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Legal & Security</h4>
+      <ul>
+        <li><a href="/nebula-main/security">Security</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Nebula Labs Inc. All rights reserved.</p>
+  </div>
+</footer></body></html>
