@@ -1,0 +1,1539 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Platform - Nebula Labs</title><style>/* Global CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+/* HEADER STYLES */
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.logo svg {
+  color: #3b82f6;
+  width: 28px;
+  height: 28px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav a {
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: #3b82f6;
+}
+
+.header-cta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-weight: 600;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* MOBILE NAV */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 99;
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+.mobile-nav a {
+  padding: 1rem;
+  color: #475569;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.mobile-nav hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* FOOTER STYLES */
+.site-footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #3b82f6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .header-nav {
+    display: none;
+  }
+  
+  .header-cta {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .logo span {
+    display: none;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Platform - Nebula Labs - Page CSS */
+.platform-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.platform-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.platform-hero .lead {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.platform-overview {
+  padding: 6rem 2rem;
+  background-color: #f8fafc;
+}
+
+.platform-overview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-intro {
+  font-size: 1.125rem;
+  color: #64748b;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #3b82f6;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+.feature-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.platform-architecture {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.platform-architecture h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.architecture-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.architecture-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.arch-layer {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.arch-layer:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.arch-layer h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.arch-layer p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.architecture-benefits h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.architecture-benefits ul {
+  list-style: none;
+}
+
+.architecture-benefits li {
+  margin-bottom: 1.25rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.architecture-benefits li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.architecture-benefits strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.platform-capabilities {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+}
+
+.platform-capabilities h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.capabilities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.capability {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.capability h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.capability p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.platform-use-cases {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.platform-use-cases h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.use-case {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.use-case:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.use-case h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.use-case p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.use-case a {
+  color: #3b82f6;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.use-case a:hover {
+  gap: 0.75rem;
+}
+
+.platform-pricing-preview {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+}
+
+.platform-pricing-preview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.platform-pricing-preview .section-intro {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-cards-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #3b82f6;
+}
+
+.pricing-card.featured {
+  border: 2px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  transform: scale(1.05);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-card li {
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.pricing-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.platform-cta-final {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.platform-cta-final h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+.platform-cta-final p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .platform-hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .platform-hero .lead {
+    font-size: 1.05rem;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn-lg {
+    padding: 0.875rem 2rem;
+    width: 100%;
+  }
+  
+  .platform-overview h2,
+  .platform-architecture h2,
+  .platform-capabilities h2,
+  .platform-use-cases h2,
+  .platform-pricing-preview h2,
+  .platform-cta-final h2 {
+    font-size: 2rem;
+  }
+  
+  .architecture-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .features-grid,
+  .capabilities-list,
+  .use-cases-grid,
+  .pricing-cards-preview {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}.platform-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.platform-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.platform-hero .lead {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.platform-overview {
+  padding: 6rem 2rem;
+  background-color: #f8fafc;
+}
+
+.platform-overview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-intro {
+  font-size: 1.125rem;
+  color: #64748b;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #3b82f6;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+.feature-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.platform-architecture {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.platform-architecture h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.architecture-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.architecture-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.arch-layer {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.arch-layer:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.arch-layer h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.arch-layer p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.architecture-benefits h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.architecture-benefits ul {
+  list-style: none;
+}
+
+.architecture-benefits li {
+  margin-bottom: 1.25rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.architecture-benefits li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.architecture-benefits strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.platform-capabilities {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+}
+
+.platform-capabilities h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.capabilities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.capability {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.capability h4 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.capability p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.platform-use-cases {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.platform-use-cases h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.use-case {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.use-case:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.use-case h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.use-case p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.use-case a {
+  color: #3b82f6;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.use-case a:hover {
+  gap: 0.75rem;
+}
+
+.platform-pricing-preview {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+}
+
+.platform-pricing-preview h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.platform-pricing-preview .section-intro {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-cards-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #3b82f6;
+}
+
+.pricing-card.featured {
+  border: 2px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  transform: scale(1.05);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-card li {
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.pricing-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.platform-cta-final {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.platform-cta-final h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+.platform-cta-final p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .platform-hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .platform-hero .lead {
+    font-size: 1.05rem;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .btn-lg {
+    padding: 0.875rem 2rem;
+    width: 100%;
+  }
+  
+  .platform-overview h2,
+  .platform-architecture h2,
+  .platform-capabilities h2,
+  .platform-use-cases h2,
+  .platform-pricing-preview h2,
+  .platform-cta-final h2 {
+    font-size: 2rem;
+  }
+  
+  .architecture-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .features-grid,
+  .capabilities-list,
+  .use-cases-grid,
+  .pricing-cards-preview {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+}</style></head><body><header class="site-header">
+  <div class="header-container">
+    <a href="/nebula-main/" class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="6" fill="currentColor" opacity="0.3"/>
+      </svg>
+      <span>Nebula Labs</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/nebula-main/platform">Platform</a>
+      <a href="/nebula-main/solutions">Solutions</a>
+      <a href="/nebula-main/pricing">Pricing</a>
+      <a href="/nebula-main/resources">Resources</a>
+      <a href="/nebula-main/about">About</a>
+    </nav>
+    <div class="header-cta">
+      <a href="/nebula-main/demo" class="btn btn-sm btn-secondary">Book Demo</a>
+      <a href="#" class="btn btn-sm btn-primary">Start Free Trial</a>
+    </div>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header><nav id="mobileNav" class="mobile-nav">
+  <a href="/nebula-main/platform">Platform</a>
+  <a href="/nebula-main/solutions">Solutions</a>
+  <a href="/nebula-main/pricing">Pricing</a>
+  <a href="/nebula-main/resources">Resources</a>
+  <a href="/nebula-main/about">About</a>
+  <a href="/nebula-main/blog">Blog</a>
+  <a href="/nebula-main/contact">Contact</a>
+  <a href="/nebula-main/security">Security</a>
+  <hr>
+  <a href="#">Start Free Trial</a>
+  <a href="/nebula-main/demo">Book Demo</a>
+</nav><section class="platform-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Advanced ML, Made Accessible</h1>
+      <p class="lead">Nebula's platform democratizes machine learning for mid-market companies. Build, deploy, and scale AI models without the complexity.</p>
+      <div class="cta-group">
+        <a href="#" class="btn btn-lg btn-primary">Start Free Trial</a>
+        <a href="/nebula-main/demo" class="btn btn-lg btn-secondary">Book a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform-overview">
+  <div class="container">
+    <h2>Everything You Need to Build AI</h2>
+    <p class="section-intro">From data preparation to production deployment, Nebula provides an integrated platform built for speed and reliability.</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 8h24M4 16h24M4 24h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Data Integration</h3>
+        <p>Connect to your existing data sources instantly. Support for SQL databases, data warehouses, APIs, and cloud storage.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 8v8l6 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Model Development</h3>
+        <p>Access pre-built models and training pipelines. Fine-tune with your data or build custom models using our low-code interface.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M4 12h24M12 4v24" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Monitoring & Optimization</h3>
+        <p>Real-time performance tracking, automated retraining, and drift detection ensure your models stay accurate in production.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 16h16M16 8v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>API & Integration</h3>
+        <p>Deploy models as REST APIs instantly. Integrate with your existing tools and workflows through native connectors.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10l10-6 10 6v12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 14v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Enterprise Security</h3>
+        <p>End-to-end encryption, SOC 2 Type II compliance, HIPAA and GDPR ready. Audit logs and role-based access control.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 10v12M10 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Scalability</h3>
+        <p>Built for growth. Handle millions of predictions per day with automatic scaling and multi-region deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform-architecture">
+  <div class="container">
+    <h2>Modern Architecture, Built for Scale</h2>
+    <p class="section-intro">Nebula's cloud-native architecture ensures reliability, performance, and cost efficiency at any scale.</p>
+    
+    <div class="architecture-content">
+      <div class="architecture-visual">
+        <div class="arch-layer">
+          <h4>User Interface</h4>
+          <p>Intuitive dashboard, API clients, integrations</p>
+        </div>
+        <div class="arch-layer">
+          <h4>API Layer</h4>
+          <p>REST APIs, GraphQL, webhooks, real-time events</p>
+        </div>
+        <div class="arch-layer">
+          <h4>Core Services</h4>
+          <p>Model training, inference, monitoring, orchestration</p>
+        </div>
+        <div class="arch-layer">
+          <h4>Infrastructure</h4>
+          <p>Kubernetes, GPU clusters, distributed storage, caching</p>
+        </div>
+        <div class="arch-layer">
+          <h4>Data Layer</h4>
+          <p>Managed data warehouse, vector store, audit logs</p>
+        </div>
+      </div>
+      
+      <div class="architecture-benefits">
+        <h3>Why Nebula's Architecture Wins</h3>
+        <ul>
+          <li>
+            <strong>Speed to Production:</strong> Deploy models in minutes, not months. Zero infrastructure setup required.
+          </li>
+          <li>
+            <strong>Cost Efficiency:</strong> Pay only for what you use. Automatic scaling prevents overprovisioning.
+          </li>
+          <li>
+            <strong>Reliability:</strong> 99.9% uptime SLA with automatic failover and distributed redundancy.
+          </li>
+          <li>
+            <strong>Flexibility:</strong> Support for any ML framework. Bring your own models or use our pre-built solutions.
+          </li>
+          <li>
+            <strong>Observability:</strong> Complete visibility into model performance, system metrics, and resource usage.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform-capabilities">
+  <div class="container">
+    <h2>Core Capabilities</h2>
+    <p class="section-intro">Everything you need to go from data to decisions.</p>
+    
+    <div class="capabilities-list">
+      <div class="capability">
+        <h4>Automated Data Preparation</h4>
+        <p>Handle missing values, outliers, and feature engineering automatically. Or manually control every step with our visual pipeline builder.</p>
+      </div>
+      
+      <div class="capability">
+        <h4>Model Marketplace</h4>
+        <p>Access industry-specific pre-trained models for common use cases: demand forecasting, churn prediction, anomaly detection, and more.</p>
+      </div>
+      
+      <div class="capability">
+        <h4>Explainability & Interpretability</h4>
+        <p>Understand why your models make specific predictions. SHAP values, feature importance, and attention visualization built-in.</p>
+      </div>
+      
+      <div class="capability">
+        <h4>A/B Testing & Experimentation</h4>
+        <p>Safely test new models in production. Gradual rollouts, performance comparison, and automatic rollback on degradation.</p>
+      </div>
+      
+      <div class="capability">
+        <h4>Automated Retraining</h4>
+        <p>Set schedules or triggers for automatic model retraining. Detect data drift and maintain model performance over time.</p>
+      </div>
+      
+      <div class="capability">
+        <h4>Developer-Friendly APIs</h4>
+        <p>SDKs for Python, JavaScript, Go, and Java. Comprehensive documentation and examples for rapid integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform-use-cases">
+  <div class="container">
+    <h2>Built for Your Use Cases</h2>
+    <p class="section-intro">From revenue optimization to risk management, Nebula powers critical business decisions.</p>
+    
+    <div class="use-cases-grid">
+      <div class="use-case">
+        <h3>Demand Forecasting</h3>
+        <p>Predict customer demand with 95%+ accuracy. Optimize inventory, reduce waste, and improve supply chain efficiency.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      
+      <div class="use-case">
+        <h3>Customer Churn Prediction</h3>
+        <p>Identify at-risk customers before they leave. Implement targeted retention campaigns and reduce customer acquisition costs.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      
+      <div class="use-case">
+        <h3>Price Optimization</h3>
+        <p>Dynamically adjust pricing based on demand, competition, and customer segments. Maximize revenue and profitability.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      
+      <div class="use-case">
+        <h3>Anomaly Detection</h3>
+        <p>Detect unusual patterns in transactions, network behavior, and operations. Prevent fraud and reduce risk exposure.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      
+      <div class="use-case">
+        <h3>Customer Segmentation</h3>
+        <p>Automatically group customers by behavior and preferences. Personalize marketing and improve customer lifetime value.</p>
+        <a href="#">Learn more →</a>
+      </div>
+      
+      <div class="use-case">
+        <h3>Lead Scoring</h3>
+        <p>Prioritize high-value leads with machine learning. Improve sales efficiency and increase conversion rates.</p>
+        <a href="#">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="platform-pricing-preview">
+  <div class="container">
+    <h2>Simple, Transparent Pricing</h2>
+    <p class="section-intro">Start free, scale as you grow. No hidden fees, no long-term contracts.</p>
+    
+    <div class="pricing-cards-preview">
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <p class="price">Free</p>
+        <ul>
+          <li>Up to 1 GB data</li>
+          <li>1 active model</li>
+          <li>10K predictions/month</li>
+          <li>Community support</li>
+        </ul>
+      </div>
+      
+      <div class="pricing-card featured">
+        <h3>Professional</h3>
+        <p class="price">$99<span>/mo</span></p>
+        <ul>
+          <li>Up to 100 GB data</li>
+          <li>5 active models</li>
+          <li>1M predictions/month</li>
+          <li>Priority support</li>
+          <li>Advanced monitoring</li>
+        </ul>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p class="price">Custom</p>
+        <ul>
+          <li>Unlimited data & models</li>
+          <li>Unlimited predictions</li>
+          <li>24/7 dedicated support</li>
+          <li>Custom SLA</li>
+          <li>On-premise option</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="pricing-cta">
+      <a href="/nebula-main/pricing" class="btn btn-lg btn-secondary">View Full Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="platform-cta-final">
+  <div class="container">
+    <h2>Ready to Transform Your Business with AI?</h2>
+    <p>Join hundreds of mid-market companies using Nebula Labs to drive growth and efficiency.</p>
+    <div class="cta-group">
+      <a href="#" class="btn btn-lg btn-primary">Start Free Trial</a>
+      <a href="/nebula-main/demo" class="btn btn-lg btn-secondary">Schedule Demo</a>
+    </div>
+  </div>
+</section><footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>Nebula Labs</h4>
+      <p>Democratizing advanced machine learning for mid-market companies.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/nebulalabs" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a href="https://linkedin.com/company/nebulalabs" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://github.com/nebulalabs" target="_blank" rel="noopener" title="GitHub">⚙</a>
+        <a href="https://youtube.com/@nebulalabs" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a href="https://discord.gg/nebulalabs" target="_blank" rel="noopener" title="Discord">💬</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/nebula-main/platform">Platform</a></li>
+        <li><a href="/nebula-main/solutions">Solutions</a></li>
+        <li><a href="/nebula-main/pricing">Pricing</a></li>
+        <li><a href="/nebula-main/demo">Request Demo</a></li>
+        <li><a href="https://docs.nebulalabs.ai" target="_blank">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/nebula-main/about">About Us</a></li>
+        <li><a href="/nebula-main/careers">Careers</a></li>
+        <li><a href="/nebula-main/blog">Blog</a></li>
+        <li><a href="/nebula-main/resources">Resources</a></li>
+        <li><a href="/nebula-main/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Legal & Security</h4>
+      <ul>
+        <li><a href="/nebula-main/security">Security</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Nebula Labs Inc. All rights reserved.</p>
+  </div>
+</footer></body></html>
